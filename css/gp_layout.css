@@ -23,18 +23,40 @@
 
 /* Flex Layout Styles */
 body{
-   display: flexbox;
-   
+   display: flex;
+   display: -webkit-flex;
+   -webkit-flex-flow: row wrap;
+   flex-flow: row wrap;
 }
-
-
+section{
+   flex-grow: 3;
+   flex-shrink: 1;
+   flex-basis: 301px;
+}
+article{
+   flex-grow: 1;
+   flex-shrink: 3;
+   flex-basis: 180px;
+}
 
 
 /* ============================================
 	Mobile Devices: 0 - 480 pixels
    ============================================
 */
-
+@media only screen and (max-width: 480px) {
+   img.panel{
+      width: 100%;
+   }
+   .horizontal{
+      order: 99;
+      -webkit-order: 99;
+   }
+   body footer{
+      order: 100;
+      -webkit-order:100;
+   }
+}
 
 
 
@@ -42,4 +64,29 @@ body{
 	Tablet and Desktop Devices: Greater than 480 pixels
    ===================================================
 */
-
+@media only screen and (min-width: 481px) {
+   .horizontal ul{
+      display: flex;
+      display: -webkit-flex;
+      -webkit-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      height: 40px;
+   }
+   ul li{
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: auto;
+   }
+   .size1{
+      width: 100%;
+   }
+   .size2{
+      width: 60%;
+   }
+   .size3{
+      width: 40%;
+   }
+   .size4{
+      width: 30%;
+   }
+}
